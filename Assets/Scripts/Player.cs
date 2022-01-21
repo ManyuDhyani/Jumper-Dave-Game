@@ -80,6 +80,6 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag(GROUND_TAG)){
             isGrounded = true;
         }
-        
+
     }
 }
