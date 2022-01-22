@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private float moveForce = 10f;
 
     [SerializeField]
-    private float jumpForce = 11f;
+    private float jumpForce = 12f;
 
     private float movmentX;
 
