@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float jumpForce = 12f;
+
+    [SerializeField]
+    private AudioSource jumpSoundEffect;
 
     private float movmentX;
 
@@ -46,7 +50,7 @@ public class Player : MonoBehaviour
 
     void PlayerMoveKeyboard(){
 
-        movmentX = Input.GetAxisRaw("Horizontal");
+        movmentX = CrossPlatformInputManager.GetAxis("Horizontal");
 
         transform.position += new Vector3(movmentX, 0f, 0f) * Time.deltaTime * moveForce;
     }
@@ -71,9 +75,12 @@ public class Player : MonoBehaviour
     }
 
     void PlayerJump(){
-        if(Input.GetButtonDown("Jump") && isGrounded){
+        if(CrossPlatformInputManager.GetButtonDown("Jump") && isGrounded){
+
+            jumpSoundEffect.Play();
             isGrounded = false;
             myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+
         }
     }
 
