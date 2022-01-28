@@ -1,6 +1,6 @@
 # Jumper-Dave-Game
 
-The game is created on Unity. The game is cross platform for pc and mobile. The main scence shown below is common for all. You can select any two characters given in the menu for the play.
+The game is created on Unity. The game is cross platform for pc and mobile. The main scence shown below is common for all. You can select any two characters given in the menu for the play. The score increases on the basis of time passed since the level started. In short, it's the survival time.
 
 ![](Readme%20Images/Main%20Menu.png)
 
